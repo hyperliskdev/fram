@@ -3,7 +3,7 @@ use std::vec;
 use bevy::{math::Vec2, prelude::*};
 
 
-enum LandState {
+enum FarmLandState {
     CROP_SELECTION,
     LAND_PREP,
     SEED_SELECTION,
@@ -13,15 +13,15 @@ enum LandState {
     FERTILIZING,
     HARVESTING,
 }
-enum LandType {
+enum FarmLandType {
     Pot,
     Field,    
 }
 
 #[derive(Component)]
-struct Land {
-    landState: LandState,
-    landType: LandType,
+struct FarmLand {
+    landState: FarmLandState,
+    landType: FarmLandType,
     quality: i32,
 }
 

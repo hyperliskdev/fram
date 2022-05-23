@@ -1,7 +1,10 @@
 mod components;
+mod state;
 
 use bevy::prelude::*;
 use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin};
+use state::main_menu::MainMenuPlugin;
+use bevy_egui::{egui, EguiContext, EguiPlugin};
 
 
 
@@ -11,5 +14,7 @@ fn main() {
         .add_plugins(DefaultPlugins)
         .add_plugin(LogDiagnosticsPlugin::default())
         .add_plugin(FrameTimeDiagnosticsPlugin::default())
+        .add_plugin(EguiPlugin)
+        .add_plugin(MainMenuPlugin)
         .run();
 }

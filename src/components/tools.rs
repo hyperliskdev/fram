@@ -8,8 +8,12 @@ enum VehicleType {
 }
 
 enum AttachmentType {
-
-
+    Sowing,
+    Harrowing,
+    Agitating,
+    Spreading,
+    Baling,
+    Trailer,    
 }
 
 
@@ -26,4 +30,11 @@ struct Vehicle(VehicleType);
 struct TractorAttatchment {
     attachmentPoint: AttachmentPoint,
     attachmentType: AttachmentType,
+}
+
+#[derive(Component)] 
+struct DrivingInfo {
+    steeringAngle: f32,
+    direction: f32,
+    speed: f32,
 }
