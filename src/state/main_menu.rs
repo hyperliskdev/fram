@@ -1,32 +1,29 @@
 use bevy::prelude::*;
-use bevy_egui::{egui, EguiContext};
-
-
+use bevy_egui::{egui::{self, Pos2}, EguiContext};
 pub struct MainMenuPlugin;
 
 impl Plugin for MainMenuPlugin {
     fn build(&self, app: &mut App) {
-        app.add_startup_system(setup_menu);
+        app.add_system(setup);
     }
-
 }
 
-fn setup_menu(mut egui_context: ResMut<EguiContext>) {
+fn setup(mut egui_context: ResMut<EguiContext>) {
+    egui::Area::new("Main Menu")
+    .show(egui_context.ctx_mut(), |ui| {
+        ui.with_layout(
+            egui::Layout::bottom_up(egui::Align::Center), |ui| {
 
-    egui_context.ctx_mut().set_visuals(egui::Visuals {
-        window_rounding: 0.0.into(),
-        ..Default::default()
+                if ui.button("Exit Game").clicked() {
+                    
+                }
+                ui.button("Options");
+                ui.button("Start Game");
+            });
     });
-        
-    egui::Area::new("Main Menu").movable(true).show(egui_context.ctx_mut(), |ui| {
-        ui.add(egui::Label::new("Start Game"));
-    });
-    
-    /*
-    There is the -?
-        camera.orthographic_projection.[top, bottom, left, right ... ]
-
-        possibly useful??
-    */
-    
 }
+
+
+fn exit_button() {}
+fn options_button() {}
+fn start_game_button() {}

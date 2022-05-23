@@ -1,7 +1,6 @@
-use bevy::{prelude::*};
+use bevy::prelude::*;
 
-
-#[derive(Component)] 
+#[derive(Component)]
 enum CropCategory {
     Herb,
     Vegetable,
@@ -22,10 +21,10 @@ enum SoilQuality {
 
 #[derive(Component)]
 struct LandShape {
-    verticies: Vec<Vec2>
+    verticies: Vec<Vec2>,
 }
 
-#[derive(Component)] 
+#[derive(Component)]
 enum GrowState {
     Seed,
     Underground,
@@ -35,10 +34,10 @@ enum GrowState {
     Ripe,
 }
 
-#[derive(Component)] 
+#[derive(Component)]
 struct Sunlight(u32);
 
-#[derive(Component)] 
+#[derive(Component)]
 struct CropName(String);
 
 #[derive(Component)]
@@ -46,17 +45,8 @@ struct PlantedInfo {
     timePlanted: f32,
     growTime: f32,
 
-    // This planted information can be use to make a 
+    // This planted information can be use to make a
     // compantion growth system or something like that.
     nearbyPlants: Vec<CropName>,
     expectedYield: i32,
 }
-
-
-
-
-
-
-
-
-

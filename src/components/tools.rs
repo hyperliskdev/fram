@@ -1,6 +1,5 @@
 use bevy::prelude::*;
 
-
 enum VehicleType {
     Car,
     Truck,
@@ -13,9 +12,8 @@ enum AttachmentType {
     Agitating,
     Spreading,
     Baling,
-    Trailer,    
+    Trailer,
 }
-
 
 enum AttachmentPoint {
     FRONT,
@@ -32,7 +30,7 @@ struct TractorAttatchment {
     attachmentType: AttachmentType,
 }
 
-#[derive(Component)] 
+#[derive(Component)]
 struct DrivingInfo {
     steeringAngle: f32,
     direction: f32,
